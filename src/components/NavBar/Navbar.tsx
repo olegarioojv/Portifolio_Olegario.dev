@@ -1,3 +1,5 @@
+import { useState, useRef, useEffect } from "react";
+
 import {
   NavContainer,
   NavLogo,
@@ -6,30 +8,69 @@ import {
   NavLink,
   NavSocial,
   SocialIcon,
+  Hamburger,
 } from "./Navbar.styled";
 
 import { Github, Linkedin } from "lucide-react";
 
 function Navbar() {
-  return (
-    <NavContainer>
-      <NavLogo>{`{777}`} olegario.dev</NavLogo>
+  const [open, setOpen] = useState(false);
 
-      <NavMenu>
+  const menuRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  return (
+    <NavContainer ref={menuRef}>
+      <NavLogo>{`{777}`} olegarioojv</NavLogo>
+
+      <Hamburger onClick={() => setOpen(!open)}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </Hamburger>
+
+      <NavMenu $open={open}>
         <NavItem>
-          <NavLink href="#">Home</NavLink>
+          <NavLink href="#" onClick={() => setOpen(false)}>
+            Home
+          </NavLink>
         </NavItem>
+
         <NavItem>
-          <NavLink href="#">About</NavLink>
+          <NavLink href="#" onClick={() => setOpen(false)}>
+            About
+          </NavLink>
         </NavItem>
+
         <NavItem>
-          <NavLink href="#">Tech Stack</NavLink>
+          <NavLink href="#" onClick={() => setOpen(false)}>
+            Tech Stack
+          </NavLink>
         </NavItem>
+
         <NavItem>
-          <NavLink href="#">Projects</NavLink>
+          <NavLink href="#" onClick={() => setOpen(false)}>
+            Projects
+          </NavLink>
         </NavItem>
+
         <NavItem>
-          <NavLink href="#">Contact</NavLink>
+          <NavLink href="#" onClick={() => setOpen(false)}>
+            Contact
+          </NavLink>
         </NavItem>
       </NavMenu>
 
