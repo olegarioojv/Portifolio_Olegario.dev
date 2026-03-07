@@ -57,8 +57,10 @@ function MyTechnologies() {
   ];
   return (
     <MyTechnologiesContainer>
-      <Title>My Tech Stack</Title>
-      <Subtitle>Technologies I’ve been working with recently</Subtitle>
+      <Title>Minhas Tecnologias</Title>
+      <Subtitle>
+        Tecnologias com as quais tenho trabalhado recentemente
+      </Subtitle>
 
       <MyTechnologiesContent>
         {technologies.map((tech) => (
