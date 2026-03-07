@@ -41,11 +41,12 @@ export const NavMenu = styled.ul<{ $open: boolean }>`
     flex-direction: column;
     align-items: flex-start;
 
-
     padding: 100px 30px;
     gap: 25px;
 
     transform: ${({ $open }) => ($open ? "translateX(0)" : "translateX(100%)")};
+    background: #191919;
+    opacity: 0.9;
 
     transition: transform 0.3s ease-in-out;
 
