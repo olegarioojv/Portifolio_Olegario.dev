@@ -33,7 +33,7 @@ function Navbar() {
   }, []);
 
   return (
-    <NavContainer ref={menuRef}>
+    <NavContainer ref={menuRef} id="home">
       <NavLogo>{`{777}`} olegarioojv</NavLogo>
 
       <Hamburger onClick={() => setOpen(!open)}>
@@ -44,31 +44,31 @@ function Navbar() {
 
       <NavMenu $open={open}>
         <NavItem>
-          <NavLink href="#" onClick={() => setOpen(false)}>
+          <NavLink href="#home" id="#home" onClick={() => setOpen(false)}>
             Home
           </NavLink>
         </NavItem>
 
         <NavItem>
-          <NavLink href="#" onClick={() => setOpen(false)}>
+          <NavLink href="#about" onClick={() => setOpen(false)}>
             About
           </NavLink>
         </NavItem>
 
         <NavItem>
-          <NavLink href="#" onClick={() => setOpen(false)}>
+          <NavLink href="#technologies" onClick={() => setOpen(false)}>
             Tech Stack
           </NavLink>
         </NavItem>
 
         <NavItem>
-          <NavLink href="#" onClick={() => setOpen(false)}>
+          <NavLink href="#projects" onClick={() => setOpen(false)}>
             Projects
           </NavLink>
         </NavItem>
 
         <NavItem>
-          <NavLink href="#" onClick={() => setOpen(false)}>
+          <NavLink href="#contact" onClick={() => setOpen(false)}>
             Contact
           </NavLink>
         </NavItem>

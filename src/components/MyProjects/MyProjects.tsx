@@ -74,7 +74,7 @@ function MyProjects() {
 
   return (
     <>
-      <Title>Projetos</Title>
+      <Title id="projects">Projetos</Title>
       <Subtitle>Coisas que construí até agora</Subtitle>
 
       <MyProjectsContainer>

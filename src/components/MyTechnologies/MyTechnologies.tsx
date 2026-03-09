@@ -56,7 +56,7 @@ function MyTechnologies() {
     },
   ];
   return (
-    <MyTechnologiesContainer>
+    <MyTechnologiesContainer id="technologies">
       <Title>Minhas Tecnologias</Title>
       <Subtitle>
         Tecnologias com as quais tenho trabalhado recentemente
