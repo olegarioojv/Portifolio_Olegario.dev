@@ -13,15 +13,22 @@ export const ContactContainer = styled.div<ContactProps>`
 
   display: flex;
   align-items: center;
+
   justify-content: ${({ $isContactPage }) =>
     $isContactPage ? "center" : "space-between"};
 
-  min-height: ${({ $isContactPage }) => ($isContactPage ? "100dvh" : "auto")};
-  flex-direction: ${({ $isContactPage }) =>
-    $isContactPage ? "column" : "row"};
+  ${({ $isContactPage }) =>
+    $isContactPage &&
+    `
+      min-height: 100dvh;
+      flex-direction: column;
+    `}
 
   @media (max-width: 768px) {
     padding: 30px 20px;
+
+    flex-direction: ${({ $isContactPage }) =>
+      $isContactPage ? "column" : "column"};
   }
 `;
 
@@ -34,14 +41,16 @@ export const ContactContent = styled.div<ContactProps>`
     $isContactPage ? "column" : "row"};
 
   @media (max-width: 768px) {
+    flex-direction: column;
     gap: 15px;
   }
 `;
 
 export const ContactText = styled.p<ContactProps>`
   color: #a6a6a6;
+
   font-size: ${({ $isContactPage }) =>
-    $isContactPage ? "clamp(28px, 4vw, 40px)" : "12px"};
+    $isContactPage ? "clamp(28px,4vw,40px)" : "12px"};
 `;
 
 export const ContactSocial = styled.div`
