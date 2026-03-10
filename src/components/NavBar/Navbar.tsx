@@ -34,7 +34,7 @@ function Navbar() {
 
   return (
     <NavContainer ref={menuRef} id="home">
-      <NavLogo>{`{777}`} olegarioojv</NavLogo>
+      <NavLogo>@olegarioojv</NavLogo>
 
       <Hamburger onClick={() => setOpen(!open)}>
         <span></span>

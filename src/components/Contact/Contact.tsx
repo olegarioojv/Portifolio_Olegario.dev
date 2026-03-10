@@ -16,9 +16,7 @@ const Contact = () => {
 
   return (
     <ContactContainer isContactPage={isContactPage}>
-      {location.pathname !== "/contact" && (
-        <NavLogo>{`{777}`} olegarioojv</NavLogo>
-      )}
+      {location.pathname !== "/contact" && <NavLogo>@olegarioojv</NavLogo>}
 
       <ContactContent>
         <ContactText>+55 035 99191-6370</ContactText>
